@@ -4,13 +4,13 @@ dirTarget=/var/jenkins_home/jobs/RSApplicationBuild/workspace/target
 logStartStop=logStartStop 
 
 chmod 777 $dirTarget/$logStartStop
-chmod 777 $dirTarget/spring-boot-rest-example-*.war
+chmod 777 $dirTarget/calculator-*.war
 
 > $dirTarget/$logStartStop
 
 fuser -n tcp -k 8091 > redirection &
 
-nohup nice java -jar $dirTarget/spring-boot-rest-example-*.war > $dirTarget/$logStartStop 2>&1 &
+nohup nice java -jar $dirTarget/calculator-*.war > $dirTarget/$logStartStop 2>&1 &
 
 
 msgBuffer="Buffering: "
